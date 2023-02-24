@@ -1,0 +1,50 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void character(double *, double *, double *);
+void calculations(double *, double *, double *, double, double, double, double, double, double, double);
+void area_rightangl(double *, double *);
+void perim(double *, double *, double *);
+void print(double, double, double);
+const double one_Two = 0.5;
+
+void character(double *aSquare, double *bSquare)
+{
+    cout << "Enter Your Value To Find Use Pythagoras Theorem:" << endl;
+    cin >> *aSquare >> *bSquare;
+}
+void area_rightang1(double *leg1, double *leg2)
+{
+    cout << "Enter Your Value To Find Area of Right Angle:" << endl;
+    cin >> *leg1 >> *leg2;
+}
+void perim(double *first, double *second, double *third)
+{
+    cout << "Enter Your Value to find the perimeter of a right angle: " << endl;
+    cin >> *first >> *second >> *third;
+}
+void calculations(double *csquare, double *area,double *perimeter, double aSquare, double bSquare, double leg1, double leg2, double first, double second, double third)
+{
+    *csquare = (aSquare * aSquare) + (bSquare * bSquare);
+    *area = one_Two * leg1 * leg2;
+    *perimeter = first + second + third;
+}
+void print(double csquare, double area, double perimeter)
+{
+    cout << "Your Square Root Value:" << sqrt(csquare) << endl;
+    cout << "Your Area for a right angle:" << area << endl;
+    cout << "Your Perimeter for Right Angle:" << perimeter << endl;
+}
+
+int main(void)
+{
+    double aSquare, bSquare, csquare, leg1, leg2, area, first, second, third, perimeter;
+    character(&aSquare, &bSquare);
+    area_rightang1(&leg1, &leg2);
+    perim(&first, &second, &third);
+    calculations(&csquare, &area, &perimeter, aSquare, bSquare, leg1, leg2, first, second, third);
+    print(csquare, area, perimeter);
+
+    return 0;
+}
